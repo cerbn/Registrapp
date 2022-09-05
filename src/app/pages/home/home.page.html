@@ -1,0 +1,145 @@
+
+
+<!-- <ion-content>
+
+  <form [formGroup]="alumno" (ngSubmit)="registrar()">
+    <ion-item>
+      <ion-label position="floating">Rut</ion-label>
+      <ion-input type="text" placeholder="Ingrese rut" formControlName="rut"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input type="text" placeholder="Ingrese nombre completo" formControlName="nom_completo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Corre Electronico</ion-label>
+      <ion-input type="text" placeholder="Ingrese su Correo Ej:xxxxxxx@Duocuc.cl" formControlName="correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" placeholder="Ingrese contraseña" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ingrese contraseña nuevamente</ion-label>
+      <ion-input type="password" placeholder="Ingrese contraseña nuevamente" [(ngModel)]="verificar_password" [ngModelOptions]="{standalone: 'true'}"></ion-input>
+    </ion-item>
+  
+    <ion-list>
+      <ion-item> 
+        <ion-select interface="popover" placeholder="Semestre" formControlName="semestre">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+          <ion-select-option value="6">6</ion-select-option>
+          <ion-select-option value="7">7</ion-select-option>
+          <ion-select-option value="8">8</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-button type="submit" [disabled]="!alumno.valid">REGISTRAR</ion-button>
+      <ion-button color="warning" (click)="actualizar()">ACTUALIZAR</ion-button>
+  
+  </form>
+  
+
+  <h1>LISTA DE USUARIOS</h1>
+  <ion-list *ngFor="let u of usuarios">
+    <p>{{u.rut}} - {{u.nom_completo}} - {{u.fecha_nac}} - {{u.semestre}} - {{u.password}}</p>
+    <ion-button color="warning" (click)="buscar(u.rut)">Buscar</ion-button>
+    <ion-button color="danger" (click)="eliminar(u.rut)">Eliminar</ion-button>
+  </ion-list>  -->
+
+
+
+
+<!-- CRUD FUNCIONANDO -->
+
+<ion-content>
+  <div class="fondo">
+    <ion-card>
+      <H1 class="h1">CRUD</H1>
+      <ion-button slot="end" routerLink="/login"><ion-icon name="log-in-outline"></ion-icon></ion-button>
+
+
+  <form [formGroup]="alumno" (ngSubmit)="registrar()">
+
+
+    <ion-item>
+      <ion-label position="floating">Rut</ion-label>
+      <ion-input type="text" placeholder="Ingrese rut" formControlName="rut"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input type="text" placeholder="Ingrese nombre completo" formControlName="nom_completo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Corre Electronico</ion-label>
+      <ion-input type="text" placeholder="Ingrese su Correo Ej:xxxxxxx@Duocuc.cl" formControlName="correo"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item> 
+        <ion-select interface="popover" placeholder="Semestre" formControlName="semestre">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+          <ion-select-option value="6">6</ion-select-option>
+          <ion-select-option value="7">7</ion-select-option>
+          <ion-select-option value="8">8</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list> 
+
+
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" placeholder="Ingrese contraseña" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ingrese contraseña nuevamente</ion-label>
+      <ion-input type="password" placeholder="Ingrese contraseña nuevamente" [(ngModel)]="verificar_password" [ngModelOptions]="{standalone: 'true'}"></ion-input>
+    </ion-item>
+
+
+
+    <ion-button type="submit" [disabled]="!alumno.valid">REGISTRAR</ion-button>
+    <ion-button color="warning" (click)="actualizar()">ACTUALIZAR</ion-button>
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>  
+  <ion-card class="lista">
+
+  <h1 class="h1">LISTA DE USUARIOS</h1>
+  <ion-list *ngFor="let u of usuarios" >
+    <p >{{u.rut}} - {{u.nom_completo}} - {{u.correo}} - {{u.semestre}} - {{u.password}}</p>
+    <ion-button color="warning" (click)="buscar(u.rut)">Buscar</ion-button>
+    <ion-button color="danger" (click)="eliminar(u.rut)">Eliminar</ion-button>
+
+    
+
+  </ion-list>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</ion-card>
+</ion-card>
+</div>
+</ion-content>
+

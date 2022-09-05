@@ -1,0 +1,66 @@
+@use '../../../global.scss';
+
+.fondo {
+    height: 100vh auto;
+    background-image: url("../../..//assets/img/fondo_duoc.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+
+ion-card {
+    --background: linear-gradient(#269fbd, #dddee0);
+    margin: 0 auto;
+    top: 2vh;
+    height: 150vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: space-between;
+form {
+    margin: 0 auto;
+    top: 10vh;
+    height: 50vh;
+    width: 50vw;
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+ion-list{ 
+  background-color: #c0bab0;
+}
+}
+.lista{
+    --background: linear-gradient(#269fbd, #010205);
+
+
+p{
+    margin: 0 auto;
+    top: 10h;
+    --background: linear-gradient(#269fbd, #6283e4);
+    height: 10vh auto;
+    width: 500vw auto;
+    flex-direction: column;
+
+
+}
+ion-list{
+    --background: linear-gradient(#269fbd, #6283e4);
+}
+}
+.h1{
+    color: #c54c1c;
+    font-weight: normal;
+    font-size: 60px;
+    font-family: Arial;
+    text-transform: uppercase;
+  }
+
+
+.p{
+    background-color: #c54c1c;
+}
