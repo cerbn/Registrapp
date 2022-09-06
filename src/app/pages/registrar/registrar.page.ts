@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registrar',
@@ -27,7 +28,9 @@ export class RegistrarPage implements OnInit {
 
   verificar_password: string;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private toastController: ToastController, 
+                      private usuarioService: UsuarioService,   
+                      private router: Router) { }
 
   ngOnInit() {
 
@@ -35,15 +38,31 @@ export class RegistrarPage implements OnInit {
 
   //método que desencadena el formulario con el boton submit:
   registrar(){
-    if (this.alumno.controls.password.value != this.verificar_password) {
-      alert('CONTRASEÑAS NO COINCIDEN!');
-      return;
-    }
-    this.usuarioService.agregarUsuario(this.alumno.value);
-    this.alumno.reset();
-    alert('USUARIO REGISTRADO!');
+    if (this.alumno.controls.password.value == this.verificar_password) {
+      this.usuarioService.agregarUsuario(this.alumno.value);
+      this.alumno.reset();
+      this.toastagregado();
+  
+      this.router.navigate(['/login']);
 
-    this.router.navigate(['/login']);
+    }
+    else{
+      this.toastError();
+    }
   }
 
+  async toastError() {
+    const toast = await this.toastController.create({
+      message: 'LAS CONTRASEÑAS NO COINCIDEN!',
+      duration: 5000
+    });
+    toast.present();
+  }
+  async toastagregado() {
+    const toast = await this.toastController.create({
+      message: 'USUARIO REGISTRADO!',
+      duration: 5000
+    });
+    toast.present();
+  }
 }

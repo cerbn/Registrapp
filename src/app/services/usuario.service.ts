@@ -7,11 +7,11 @@ export class UsuarioService {
 
   usuarios: any[] = [
     {
-      rut: '6.666.666-6',
-      nom_completo: 'Mister Satan',
-      correo : 'satan@duocuc.cl',
+      rut: '1.111.111-1',
+      nom_completo: 'Mister popo',
+      correo : 'popo@duocuc.cl',
       semestre: 6,
-      password: 'diosito',
+      password: '123456',
       tipo_usuario: 'administrador'
     }
   ];
